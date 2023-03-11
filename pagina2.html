@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/7fe742cab1.js" crossorigin="anonymous"></script>
+    <title>Pericles Delivery</title>
+
+    <script>
+        function Idade(){
+            const $URL     = new URLSearchParams(window.location.search);
+            let $maior     = $URL.get("maior");
+            let $areaTxt   = document.getElementById("texto");
+            let $btnEntrar = document.getElementById("btnEntrar");
+
+                if($maior == "sim"){
+                    $areaTxt.innerHTML = "Olá! Gostaria de te dar boas vindas a Cervejaria do Pericles. <br>Aqui você encontrará as melhores bebidas do Brasil!"
+                }else{
+                    $areaTxt.innerHTML = "Sinto muito, mas este site só é permitido<br>para maiores de 18 anos! :("
+                    $btnEntrar.style.display = "none";
+                }
+        }
+    </script>
+
+</head>
+<body onload="Idade()">
+
+    <header>
+        <ul>
+            <li>A Cervejaria</li>
+            <li>Nossas Cervejas</li>
+            <li>Delivery</li>
+        </ul>
+        <p>Meu Carrinho <i class="fa-solid fa-cart-shopping"></i> </p>
+    </header>
+
+    <main>
+        <div class="box">
+            <img src="img/cerveja.svg" alt="">
+    
+            <h3 id="texto">..</h3>
+        </div>
+
+        <button class="button" style="margin-top: 50px;" id="btnEntrar">Entrar no Site</button>
+    </main>
+    
+    
+</body>
+</html>
